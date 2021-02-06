@@ -10,6 +10,10 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            var foo = new Foo<String>();
+            var foo2 = new Foo<Int32>();
+
+
             Console.WriteLine("Hello World!");
 
             var rand = new Random();
