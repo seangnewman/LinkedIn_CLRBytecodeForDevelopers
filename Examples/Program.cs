@@ -8,6 +8,11 @@ namespace Examples
 {
     class Program
     {
+        static void Print(Program p)
+        {
+            Console.WriteLine("I got a program object");
+        }
+
         static void Main(string[] args)
         {
             Example1();
@@ -27,6 +32,15 @@ namespace Examples
                 Console.WriteLine($"Found {name}");
             }
 
+        }
+
+        static void Example2()
+        {
+            dynamic d1 = "String";
+            dynamic d2 = 32;
+            dynamic d3 = new Program();
+
+            Print(d3);
         }
     }
 }
