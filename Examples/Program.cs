@@ -13,6 +13,24 @@ namespace Examples
             Console.WriteLine("I got a program object");
         }
 
+        static IEnumerable<string> Names()
+        {
+            yield return "Tammy";
+            yield return "Cody";
+            yield return "Connor";
+        }
+
+        static IEnumerable<int> Randoms()
+        {
+            var rand = new Random();
+
+            
+            while (true)
+            {
+                yield return rand.Next();
+            }
+        }
+
         static void Main(string[] args)
         {
             Example1();
@@ -32,6 +50,13 @@ namespace Examples
                 Console.WriteLine($"Found {name}");
             }
 
+            foreach (var r in Randoms())
+            {
+                //Console.WriteLine($"Found {r}");    // Creates an infinite loop
+            }
+
+
+
         }
 
         static void Example2()
@@ -41,6 +66,15 @@ namespace Examples
             dynamic d3 = new Program();
 
             Print(d3);
+        }
+
+        static void Example3()
+        {
+            foreach (var name in Names())
+            {
+                Console.WriteLine($"Found {name}");
+            }
+
         }
     }
 }
